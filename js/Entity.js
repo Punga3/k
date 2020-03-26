@@ -12,7 +12,7 @@ class Entity{
 		this.dscale=0;*/
 	}
 	speed(){
-		return this.lvl*0.3;
+		return this.lvl*0.3*(this==window.player?4:1);
 	}
 	draw(w,h,ctx){
 		ctx.drawImage(window.images[this.lvl-1],

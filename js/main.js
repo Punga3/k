@@ -9,8 +9,6 @@ function start(){
 	window.player = new Entity(1,320,320,true);
 	window.player.x=canvas.width/2;
 	window.player.y=canvas.height/2;
-	window.player.dx=10;
-	window.player.dy=10;
 	window.entities.push(window.player);
 	window.images = [];
 
