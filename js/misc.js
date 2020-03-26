@@ -21,8 +21,4 @@ function leftClick(event) {
 
 function getRandomInt(max) {
 	return Math.floor(Math.random() * Math.floor(max));
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> cd9e725833f7bbd3b9c7d518d5bfa84b667a2845
