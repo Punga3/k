@@ -11,7 +11,7 @@ class Entity{
 		this.scale=1;
 		this.dscale=0;
 	}
-	function drawEntity(self,ctx){
+	draw = function(self,ctx){
 		ctx.translate(self.x+self.w/2,self.y+self.h/2);
 		ctx.rotate(-self.rotation);
 		ctx.drawImage(window.images[self.lvl-1],-self.w/2,-self.w/2,self.w,self.h);
