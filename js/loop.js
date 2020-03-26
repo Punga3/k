@@ -9,7 +9,7 @@ function loop(){
 		var enti = window.images[ent.lvl-1];
 		var entw = 3*enti.width/(ent.lvl*ent.scale);
 		var enth = 3*enti.height/(ent.lvl*ent.scale);
-		ent.draw(window.context);
+		ent.draw(entw,enth,window.context);
 
 		//Bullshit
 		if(window.time%5==0){

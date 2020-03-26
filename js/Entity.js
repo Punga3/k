@@ -11,11 +11,11 @@ class Entity{
 		this.scale=1;
 		this.dscale=0;
 	}
-	draw(ctx){
-		ctx.translate(this.x+this.w/2,this.y+this.h/2);
+	draw(w,h,ctx){
+		ctx.translate(this.x+w/2,this.y+h/2);
 		ctx.rotate(-this.rotation);
-		ctx.drawImage(window.images[this.lvl-1],-this.w/2,-this.w/2,this.w,this.h);
+		ctx.drawImage(window.images[this.lvl-1],-w/2,-w/2,w,h);
 		ctx.rotate(this.rotation);
-		ctx.translate(-this.x-this.h/2, -this.y-this.h/2);
+		ctx.translate(-this.x-h/2, -this.y-h/2);
 	}
 }
