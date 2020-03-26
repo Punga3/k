@@ -1,3 +1,4 @@
+
 function drawEntity(ent,entw,enth,ctx){
 	ctx.translate(ent.x+entw/2,ent.y+enth/2);
 	ctx.rotate(-ent.rotation);
@@ -6,6 +7,7 @@ function drawEntity(ent,entw,enth,ctx){
 	ctx.translate(-ent.x-enth/2, -ent.y-enth/2);
 }
 
+//Load src from file
 function imgSrcName(lvl){
 	return "levels/lvl"+lvl+".png";
 }
