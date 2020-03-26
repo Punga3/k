@@ -1,15 +1,15 @@
 function loop(){
-	window.cnv.width=window.innerWidth;
-	window.cnv.height=window.innerHeight;
+	window.canvas.width=window.innerWidth;
+	window.canvas.height=window.innerHeight;
 	window.time+=1;
-	window.ctx.fillStyle="#FFFFFF";
-	window.ctx.fillRect(0,0,window.cnv.width,window.cnv.height);
+	window.context.fillStyle="#FFFFFF";
+	window.context.fillRect(0,0,window.canvas.width,window.cnv.height);
 	for(var i=0; i<window.entities.length; i++){
 		var ent = window.entities[i];
 		var enti = window.images[ent.lvl-1];
 		var entw = 3*enti.width/(ent.lvl*ent.scale);
 		var enth = 3*enti.height/(ent.lvl*ent.scale);
-		ent.draw(window.ctx);
+		ent.draw(window.context);
 
 		//Bullshit
 		if(window.time%5==0){
@@ -24,8 +24,8 @@ function loop(){
 				ent.scale=1/2
 				ent.dscale*=-0.8;
 			}
-			if(ent.x+entw>window.cnv.width){
-				ent.x=window.cnv.width-entw;
+			if(ent.x+entw>window.canvas.width){
+				ent.x=window.canvas.width-entw;
 				ent.dx=-Math.round(ent.dx/1.5);
 				ent.drotation*=-0.8;
 			}
@@ -34,8 +34,8 @@ function loop(){
 				ent.dx=-Math.round(ent.dx/1.5);
 				ent.drotation*=-0.8;
 			}
-			if(ent.y+enth>window.cnv.height){
-				ent.y=window.cnv.height-enth;
+			if(ent.y+enth>window.canvas.height){
+				ent.y=window.canvas.height-enth;
 				ent.dy=-Math.round(ent.dy/1.5);
 				ent.drotation*=-0.8;
 			}
