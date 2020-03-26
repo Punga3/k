@@ -14,8 +14,8 @@ function start(){
 	window.images = [];
 
 	//Add entities to field
-	for(var i = 1; i<100; i++){
-		var entity = new Entity(getRandomInt(10)+1,getRandomInt(window.innerWidth),getRandomInt(window.innerHeight),false,Math.random()*2*Math.PI);
+	for(var i = 1; i<10000; i++){
+		var entity = new Entity(getRandomInt(10)+1,10*(2*getRandomInt(window.innerWidth)-window.innerWidth),10*(2*getRandomInt(window.innerHeight)-window.innerHeight),false,Math.random()*2*Math.PI);
 		/*entity.dx = 10*(Math.random()*2-1);
 		entity.dx = 10*(Math.random()*2-1);*/
 		window.entities.push(entity);
