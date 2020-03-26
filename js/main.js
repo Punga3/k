@@ -2,8 +2,9 @@ function start(){
 	//Init
 	window.canvas = document.getElementById("cnv");
 	window.context = window.canvas.getContext("2d");
-	//window.canvas.onmousemove=leftClick;
-	//window.canvas.ontouchmove=leftClick;
+	window.canvas.addEventListener("click", playerMove, false);
+	//window.canvas.ontouchclick=playerMove;
+
 	window.entities = [];
 	window.player = new Entity(1,320,320,true);
 	window.player.x=canvas.width/2;

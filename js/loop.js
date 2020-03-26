@@ -4,6 +4,7 @@ function loop(){
 	window.time+=1;
 	window.context.fillStyle="#FFFFFF";
 	window.context.fillRect(0,0,window.canvas.width,window.cnv.height);
+	
 	for(var i=0; i<window.entities.length; i++){
 		var ent = window.entities[i];
 		var entImage = window.images[ent.lvl-1];
