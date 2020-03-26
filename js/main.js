@@ -2,8 +2,8 @@ function start(){
 	//Init
 	window.canvas = document.getElementById("cnv");
 	window.context = window.canvas.getContext("2d");
-	window.canvas.onmousemove=leftClick;
-	window.canvas.ontouchmove=leftClick;
+	//window.canvas.onmousemove=leftClick;
+	//window.canvas.ontouchmove=leftClick;
 	window.entities = [];
 	window.player = new Entity(1,320,320,true);
 	window.entities.push(window.player);
