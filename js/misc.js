@@ -1,6 +1,6 @@
 function playerMove(){
-	var mouseX = event.clientX;
-	var mouseY = event.clientY;
+	var mouseX = window.cursorX;
+	var mouseY = window.cursorY;
 
 	var vectorX = mouseX - window.canvas.width/2;
 	var vectorY = mouseY - window.canvas.height/2;
@@ -10,8 +10,19 @@ function playerMove(){
 
 	window.player.dx = unitVectorX;
 	window.player.dy = unitVectorY;
+}
 
-	console.log(unitVectorX + " : " + unitVectorY);
+function saveCursor(event){
+	window.cursorX = event.clientX;
+	window.cursorY = event.clientY;
+}
+
+function enablePlayerMove(){
+	window.movePlayer = true;
+}
+
+function disablePlayerMove(){
+	window.movePlayer = false;
 }
 
 function getRandomInt(max) {

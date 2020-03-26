@@ -12,6 +12,10 @@ function loop(){
 		var entHeight = 3*entImage.height/(ent.lvl);
 		ent.draw(entWidth,entHeight,window.context);
 		ent.doing();
+		
+		if(window.movePlayer){
+			playerMove();
+		}
 	}
 }
 
