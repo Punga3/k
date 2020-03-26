@@ -12,7 +12,7 @@ function loop(){
 		drawEntity(ent,entw,enth,window.ctx);
 
 		//Bullshit
-  	if(window.time%5==0){
+		if(window.time%5==0){
 			ent.x+=ent.dx;
 			ent.y+=ent.dy;
 			ent.rotation+=ent.drotation * Math.PI / 180;
