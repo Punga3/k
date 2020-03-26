@@ -1,22 +1,17 @@
-function leftClick(event) {
+function playerMove(){
+	var mouseX = event.clientX;
+	var mouseY = event.clientY;
 
-	var xClick = event.clientX;
-	var yClick = event.clientY;
-	var yeetSpeed = 1;
+	var vectorX = mouseX - window.player.x;
+	var vectorY = mouseY - window.player.y;
 
-	for(var i = 0; i < window.entities.length; i++){
-		var ent = window.entities[i];
-		if(ent.x >= xClick){
-			ent.dx -= yeetSpeed;
-		}else {
-			ent.dx += yeetSpeed;
-		}
-		if(ent.y >= yClick){
-			ent.dy -= yeetSpeed;
-		}else {
-			ent.dy += yeetSpeed;
-		}
-	}
+	var unitVectorX = vectorX / Math.sqrt((vectorX*vectorX) + (vectorY*vectorY));
+	var unitVectorY = vectorY / Math.sqrt((vectorX*vectorX) + (vectorY*vectorY));
+
+	window.player.dx = unitVectorX;
+	window.player.dy = unitVectorY;
+
+	console.log(unitVectorX + " : " + unitVectorY);
 }
 
 function getRandomInt(max) {
