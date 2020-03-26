@@ -12,4 +12,3 @@ class Entity{
 		this.dscale=0;
 	}
 }
-

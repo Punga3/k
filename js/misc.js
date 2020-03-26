@@ -1,7 +1,7 @@
 function leftClick(event) {
 
-  var xClick = event.clientX;
-  var yClick = event.clientY;
+	var xClick = event.clientX;
+	var yClick = event.clientY;
 	var yeetSpeed = 1;
 
 	for(var i = 0; i < window.entities.length; i++){
@@ -19,6 +19,6 @@ function leftClick(event) {
 	}
 }
 function getRandomInt(max) {
-  return Math.floor(Math.random() * Math.floor(max));
+	return Math.floor(Math.random() * Math.floor(max));
 }
 
