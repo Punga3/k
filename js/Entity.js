@@ -11,11 +11,19 @@ class Entity{
 		this.scale=1;
 		this.dscale=0;*/
 	}
+	speed(){
+		return this.lvl*0.3;
+	}
 	draw(w,h,ctx){
-		ctx.translate(this.x+w/2,this.y+h/2);
-		/*ctx.rotate(-this.rotation);*/
-		ctx.drawImage(window.images[this.lvl-1],-w/2,-w/2,w,h);
-		//ctx.rotate(this.rotation);
-		ctx.translate(-this.x-h/2, -this.y-h/2);
+		ctx.drawImage(window.images[this.lvl-1],
+		window.canvas.width/2+this.x-w/2-window.player.x,
+		window.canvas.height/2+this.y-h/2-window.player.y
+		,w,h);
+	}
+	doing(){
+		this.x+=this.dx*this.speed();
+		this.y+=this.dy*this.speed();
+		this.dx*=0.99;
+		this.dy*=0.99;
 	}
 }

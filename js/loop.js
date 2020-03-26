@@ -10,6 +10,7 @@ function loop(){
 		var entWidth = 3*entImage.width/(ent.lvl);
 		var entHeight = 3*entImage.height/(ent.lvl);
 		ent.draw(entWidth,entHeight,window.context);
+		ent.doing();
 	}
 }
 
