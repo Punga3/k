@@ -14,7 +14,10 @@ function loop(){
 		ent.draw(window.context);
 		ent.doing();
 
-		window.entities[0].colide(window.entities[1]);
+		//Player collision
+		if(i > 0 && window.entities[0].colide(window.entities[i])){
+			window.entities.splice(i, 1);
+		}
 		
 		//Move player
 		if(window.movePlayer){

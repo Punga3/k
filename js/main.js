@@ -14,14 +14,12 @@ function start(){
 	window.images = [];
 
 	//Add entities to field
-	for(var i = 1; i<0; i++){
+	for(var i = 1; i<1000; i++){
 		var entity = new Entity(getRandomInt(10)+1,10*(2*getRandomInt(window.innerWidth)-window.innerWidth),10*(2*getRandomInt(window.innerHeight)-window.innerHeight),false,Math.random()*2*Math.PI);
 		/*entity.dx = 10*(Math.random()*2-1);
 		entity.dx = 10*(Math.random()*2-1);*/
 		window.entities.push(entity);
 	}
-	var entity = new Entity(10,10,false,Math.random()*2*Math.PI);
-	window.entities.push(entity)
 
 	//Init images
 	for(var i = 1; i<11; i++){
