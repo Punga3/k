@@ -6,12 +6,18 @@ function start(){
 	window.canvas.addEventListener("mousedown", enablePlayerMove, false);
 	window.canvas.addEventListener("mouseup", disablePlayerMove, false);
 
-	window.entities = [];
+	//Create player
 	window.player = new Entity(1,320,320,true);
 	window.player.x=canvas.width/2;
 	window.player.y=canvas.height/2;
+
+	//Create entitites
+	window.entities = [];
 	window.entities.push(window.player);
 	window.images = [];
+
+	//Create score HUD
+	window.score = new Score(0,1);
 
 	//Add entities to field
 	for(var i = 1; i<1000; i++){

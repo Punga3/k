@@ -8,11 +8,8 @@ class Entity{
 		this.dx=0;
 		this.dy=0;
 		this.player=player;
-		/*this.rotation=rotation;
-		this.drotation=0
-		this.scale=1;
-		this.dscale=0;*/
 	}
+
 	colide(e){
 		if((this.y - (this.h/2)) < (e.y + (e.h/2)) && (this.y + (this.h/2)) > (e.y - (e.h/2))) {
 			if((this.x - (this.w/2)) < (e.x + (e.w/2)) && (this.x + (this.w/2)) > (e.x - (e.w/2))) {
@@ -21,6 +18,7 @@ class Entity{
 		}
 		return false;
 	}
+
 	speed(){
 		return this.lvl*0.3*(this==window.player?4:1);
 	}

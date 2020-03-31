@@ -16,7 +16,14 @@ function loop(){
 
 		//Player collision
 		if(i > 0 && window.entities[0].colide(window.entities[i])){
-			window.entities.splice(i, 1);
+			if(window.entities[i].lvl <= window.entities[0].lvl){
+				//Add score
+				window.score.calculateLevel(window.entities[i]);
+				window.entities.splice(i, 1);
+			} else {
+				//TODO
+				console.log("Too big lvl!");
+			}
 		}
 		
 		//Move player
@@ -24,5 +31,8 @@ function loop(){
 			playerMove();
 		}
 	}
+
+	//Draw score
+	window.score.draw(window.context);
 }
 
