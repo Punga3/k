@@ -1,6 +1,5 @@
 class Entity{
-	constructor(lvl,x,y,player,rotation){
-		this.lvl=lvl;
+	constructor(x,y,player,rotation){
 		this.x=x;
 		this.y=y;
 		this.w=0;
@@ -8,12 +7,8 @@ class Entity{
 		this.dx=0;
 		this.dy=0;
 		this.player=player;
-		/*this.rotation=rotation;
-		this.drotation=0
-		this.scale=1;
-		this.dscale=0;*/
 	}
-	colide(e){
+	isColliding(e){
 		if((this.y - (this.h/2)) < (e.y + (e.h/2)) && (this.y + (this.h/2)) > (e.y - (e.h/2))) {
 			if((this.x - (this.w/2)) < (e.x + (e.w/2)) && (this.x + (this.w/2)) > (e.x - (e.w/2))) {
 				return true;
@@ -21,12 +16,17 @@ class Entity{
 		}
 		return false;
 	}
+	collide(e){
+	}
 	speed(){
-		return this.lvl*0.3*(this==window.player?4:1);
+		return 0;
+	}
+	getImage(){
+		return new Image();
 	}
 
 	draw(ctx){
-		ctx.drawImage(window.images[this.lvl-1],
+		ctx.drawImage(this.getImage(),
 			window.canvas.width/2+this.x-this.w/2-window.player.x,
 			window.canvas.height/2+this.y-this.h/2-window.player.y
 			,this.w,this.h);
