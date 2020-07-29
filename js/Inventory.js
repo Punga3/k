@@ -5,7 +5,6 @@ class Inventory{
 	}
 	pickUp(item){
 		this.items.push(item);
-		this.selected=this.items.length-1;
 	}
 	getSize(){
 		return this.items.length;
@@ -22,6 +21,9 @@ class Inventory{
 	}
 	currentItem(){
 		return this.getItem(this.selected);
+	}
+	getIndex(){
+		return this.selected;
 	}
 	getItem(i){
 		if(i<this.getSize()){

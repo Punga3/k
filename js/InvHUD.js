@@ -17,10 +17,10 @@ class InvHUD extends Entity{
 			ctx.fillText(text, this.x, this.y+40);
 			let textDim = ctx.measureText(text);
 			let item=window.player.inventory.currentItem();
-			item.drawWhere(ctx,this.x+textDim.width+item.w/2,item.h/2+this.y+15);
+			item.drawWhere(ctx,this.x+textDim.width,this.y+15);
 			ctx.font = "20px Consolas";
 			ctx.fillStyle = "black";
-			ctx.fillText(item.getName(), this.x, this.y+15+40+20);
+			ctx.fillText("["+(window.player.inventory.getIndex()+1)+"/"+window.player.inventory.getSize()+"] "+item.getName(), this.x, this.y+15+40+20);
 		}
 	}
 }

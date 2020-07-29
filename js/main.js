@@ -23,7 +23,6 @@ function start(){
 	//Create HUD
 	window.score = new Score(0,1);
 	window.invHUD = new InvHUD();
-	window.entities.push(invHUD);
 
 	//Add entities to field
 	for(var i = 1; i<1000; i++){
@@ -32,10 +31,10 @@ function start(){
 		entity.dx = 10*(Math.random()*2-1);
 		window.entities.push(entity);
 	}
-	window.entities.push(new Ball(320,320,32,32));
-	window.entities.push(new Ball(320,200,32,32));
-	window.entities.push(new Ball(320,100,32,32));
+	window.entities.push(new Chair(320,200,32,32));
+	window.entities.push(new Chair(320,100,32,32));
 
+	window.entities.push(invHUD);
 
 	//Set timer loop
 	window.imageManager.loadImages(function(){window.loopId=setInterval(loop,5);});
