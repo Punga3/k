@@ -10,7 +10,7 @@ class Ball extends Item {
 	}
 	drawWhere(ctx,x,y){
 		ctx.fillStyle=this.color;
-		ctx.fillRect(x-this.w/2,y-this.h/2,this.w,this.h);
+		ctx.fillRect(x,y,this.w,this.h);
 	}
 	draw(ctx){
 		this.drawWhere(ctx,calcDrawX(this.x,this.w),calcDrawY(this.y,this.h));

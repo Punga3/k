@@ -1,7 +1,7 @@
 class ImageManager{
 	constructor(){
 		this.imgs={};
-		this.loadImgs=[];
+		this.loadImgs=["chair","car","big_car","boomerang"];
 		for(var i=0;i<Monster.MAXLVL;i++)
 			this.loadImgs.push("lvl"+(i+1))
 	}
