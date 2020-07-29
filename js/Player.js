@@ -1,7 +1,6 @@
 class Player extends Monster{
-	constructor(lvl,x,y,rotation){
-		super(lvl,x,y,rotation);
-		this.inventory=[];
+	constructor(lvl,x,y){
+		super(lvl,x,y);
 	}
 	speed(){
 		return super.speed()*4;

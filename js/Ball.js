@@ -1,12 +1,18 @@
 class Ball extends Item {
-	getNazev(){
-		return "balll";
+	constructor(x,y,w,h){
+		super(x,y);
+		this.w=w;
+		this.h=h;
+		this.color=getRandomColor();
+	}
+	getName(){
+		return "balll "+this.color;
+	}
+	drawWhere(ctx,x,y){
+		ctx.fillStyle=this.color;
+		ctx.fillRect(x-this.w/2,y-this.h/2,this.w,this.h);
 	}
 	draw(ctx){
-		ctx.fillStyle="#00FF00"
-		ctx.fillRect(
-			window.canvas.width/2+this.x-this.w/2-window.player.x,
-			window.canvas.height/2+this.y-this.h/2-window.player.y
-			,this.w,this.h);
+		this.drawWhere(ctx,calcDrawX(this.x,this.w),calcDrawY(this.y,this.h));
 	}
 }

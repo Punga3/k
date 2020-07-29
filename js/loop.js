@@ -7,21 +7,22 @@ function loop(){
 	for(var i=0; i<window.entities.length; i++){
 		//Init entity
 		var ent = window.entities[i];
-		var entImage = ent.getImage();
-		ent.w = 3*entImage.width/(ent.lvl);
-		ent.h = 3*entImage.height/(ent.lvl);
-		ent.draw(window.context);
-		ent.doing();
-		for(var j=i; j<window.entities.length; j++){
-			if(window.entities[j].isColliding(window.entities[i])){
-				window.entities[i].collide(window.entities[j]);
-				window.entities[j].collide(window.entities[i]);
+		if(!ent.disabled){
+			ent.draw(window.context);
+			ent.doing();
+			for(var j=i; j<window.entities.length; j++){
+				if(!window.entities[j].disabled){
+					if(window.entities[j].isColliding(window.entities[i])){
+						window.entities[i].collide(window.entities[j]);
+						window.entities[j].collide(window.entities[i]);
+					}
+				}
 			}
-		}
-		
-		//Move player
-		if(window.movePlayer){
-			playerMove();
+			
+			//Move player
+			if(window.movePlayer){
+				playerMove();
+			}
 		}
 	}
 

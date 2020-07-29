@@ -1,12 +1,12 @@
 class Entity{
-	constructor(x,y,player,rotation){
+	constructor(x,y,w,h){
 		this.x=x;
 		this.y=y;
-		this.w=0;
-		this.h=0;
+		this.w=w;
+		this.h=h;
 		this.dx=0;
 		this.dy=0;
-		this.player=player;
+		this.disabled=false;
 	}
 	isColliding(e){
 		if((this.y - (this.h/2)) < (e.y + (e.h/2)) && (this.y + (this.h/2)) > (e.y - (e.h/2))) {
@@ -17,27 +17,10 @@ class Entity{
 		return false;
 	}
 
-	collide(e){
-
-	}
-	speed(){
-		return 0;
-	}
-	getImage(){
-		return new Image();
-	}
-
 	draw(ctx){
-		ctx.drawImage(this.getImage(),
-			window.canvas.width/2+this.x-this.w/2-window.player.x,
-			window.canvas.height/2+this.y-this.h/2-window.player.y
-			,this.w,this.h);
 	}
-
+	collide(e){
+	}
 	doing(){
-		this.x+=this.dx*this.speed();
-		this.y+=this.dy*this.speed();
-		this.dx*=0.99;
-		this.dy*=0.99;
 	}
 }
